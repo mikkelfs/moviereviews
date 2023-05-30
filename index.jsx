@@ -1,11 +1,14 @@
-import * as ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import * as React from "react";
+import App from "./src/App"
+import { BrowserRouter } from "react-router-dom";
 
-function Application() {
-    return <h1>Mikkels Movie Database</h1>
-}
+const root = ReactDOM.createRoot(document.getElementById("app"))
 
-ReactDOM.render(
-    <Application/>,
-    document.getElementById("app")
-);
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </React.StrictMode>
+)
